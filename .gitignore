@@ -1,3 +1,12 @@
+# Ignorar imagenes
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.svg
+
 .idea/
 *.iml
 .gradle
