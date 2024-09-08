@@ -5,48 +5,70 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="100dp"-->
 <!--        android:orientation="horizontal"-->
 <!--        android:background="#DD5757">-->
-
-<!--        <Button-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:text="Hola">-->
-<!--        </Button>-->
-<!--        <Button-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:text="Jelou">-->
-<!--        </Button>-->
-<!--        <Button-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:text="oa">-->
-<!--        </Button>-->
 <!--    </LinearLayout>-->
+
     <ImageView
+        android:id="@+id/loginImg"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/logillo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.0" />
 
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginImg"
+        app:layout_constraintBottom_toTopOf="@+id/passwordET"
+        android:hint="@string/email"
+        />
 
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailET"
+        />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:background="#673AB7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordET"
+        app:layout_constraintVertical_bias="0.032"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="381dp"
+        android:src="@drawable/sessionimg"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="375dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
