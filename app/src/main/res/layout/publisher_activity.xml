@@ -1,77 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    tools:context=".activities.PublisherActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.PublisherActivity">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/navbar"
             android:layout_width="match_parent"
-            android:layout_height="107dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical"
-            >
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#0000FF"
-                android:src="@drawable/baseline_account_circle_24"
-                app:tint="@color/white"
-                android:layout_gravity="start"
-                android:paddingRight="170dp"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                >
 
-            <ImageButton
-                android:id="@+id/logoutBtn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#FF0000"
-                android:scaleType="fitCenter"
-                android:src="@drawable/baseline_logout_24"
-                android:layout_gravity="end"
-                android:paddingLeft="170dp"
-                android:contentDescription="logout"
-                />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#0078F2"
+                    android:src="@drawable/baseline_account_circle_24"
+                    app:tint="@color/white"
+                    android:layout_gravity="start"
+                    android:paddingRight="170dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/logoutBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#ED1D24"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/baseline_logout_24"
+                    android:layout_gravity="end"
+                    android:paddingLeft="170dp"
+                    android:contentDescription="logout"
+                    />
+            </LinearLayout>
+
+
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="0dp"-->
+            <!--            android:layout_weight="1"-->
+            <!--            android:orientation="horizontal">-->
+
+            <!--            <ImageButton-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:background="#0000FF"-->
+            <!--                android:src="@drawable/dcbutton"-->
+            <!--                android:scaleType="centerCrop"-->
+            <!--                android:contentDescription="dc"/>-->
+
+
+            <!--            <ImageButton-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:background="#FF0000"-->
+            <!--                android:src="@drawable/marvelbutton"-->
+            <!--                android:scaleType="centerCrop"-->
+            <!--                android:contentDescription="marvel"/>-->
+            <!--        </LinearLayout>-->
+
         </LinearLayout>
 
-
-        <LinearLayout
+        <!--Agregando un recycleview CAMBIOS EN EL DISEÑO-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/marveldc_recycleview"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#0000FF"
-                android:src="@drawable/dcbutton"
-                android:scaleType="centerCrop"
-                android:contentDescription="dc"/>
+            android:layout_height="900dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/navbar" />
 
 
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#FF0000"
-                android:src="@drawable/marvelbutton"
-                android:scaleType="centerCrop"
-                android:contentDescription="marvel"/>
-        </LinearLayout>
-    </LinearLayout>
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

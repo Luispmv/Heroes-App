@@ -8,17 +8,27 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.heroesapp.MainActivity
 import com.example.heroesapp.R
+import com.example.heroesapp.adapters.PublisherAdapter
+import com.example.heroesapp.models.Publisher
 
 class PublisherActivity : AppCompatActivity() {
     lateinit var logoutBtn : ImageView
+    lateinit var publisherRecyclerView:  RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.publisher_activity)
         val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
         logoutBtn = findViewById(R.id.logoutBtn)
+        publisherRecyclerView = findViewById(R.id.marveldc_recycleview)
+        publisherRecyclerView.adapter = PublisherAdapter(Publisher.publishers)
+        publisherRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+
         logoutBtn.setOnClickListener{
             Log.i("LOGOUT","CERRANDO SESION")
             val editor = sharedPreferences.edit()
