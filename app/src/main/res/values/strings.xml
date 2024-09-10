@@ -3,4 +3,5 @@
     <string name="email">Coloca tu email</string>
     <string name="password">Contraseña</string>
     <string name="login">Iniciar Sesion</string>
+    <string name="backwards_arrow">backwards arrow</string>
 </resources>
