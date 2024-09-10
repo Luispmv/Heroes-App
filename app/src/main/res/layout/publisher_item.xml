@@ -8,9 +8,11 @@
     <ImageView
         android:background="#0078F2"
         android:id="@+id/publisher_image"
-        android:layout_width="225dp"
+        android:layout_width="match_parent"
         android:layout_height="1100dp"
         android:src="@drawable/dcbutton"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:layout_weight="1"/>
+
 
 </LinearLayout>

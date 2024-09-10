@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.heroesapp.MainActivity
 import com.example.heroesapp.R
-import com.example.heroesapp.adapters.PublisherAdapter
 import com.example.heroesapp.models.Publisher
 
 class PublisherActivity : AppCompatActivity() {
@@ -24,9 +23,7 @@ class PublisherActivity : AppCompatActivity() {
         setContentView(R.layout.publisher_activity)
         val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
         logoutBtn = findViewById(R.id.logoutBtn)
-        publisherRecyclerView = findViewById(R.id.marveldc_recycleview)
-        publisherRecyclerView.adapter = PublisherAdapter(Publisher.publishers)
-        publisherRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
 
 
         logoutBtn.setOnClickListener{
