@@ -3,6 +3,8 @@ package com.example.heroesapp.activities
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,16 +15,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.heroesapp.MainActivity
 import com.example.heroesapp.R
 import com.example.heroesapp.models.Publisher
+import java.util.concurrent.Flow
 
 class PublisherActivity : AppCompatActivity() {
     lateinit var logoutBtn : ImageView
     lateinit var publisherRecyclerView:  RecyclerView
+
+    //Referenciando al boton de dc
+    //Referenciando al boton de marvel
+    lateinit var dcBtn : ImageButton
+    lateinit var marvelBtn : View
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.publisher_activity)
         val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
         logoutBtn = findViewById(R.id.logoutBtn)
+
+        //Encontrar nuestros elementos por id
+        dcBtn = findViewById(R.id.dc)
+        marvelBtn = findViewById(R.id.marvel)
 
 
 
@@ -34,6 +47,18 @@ class PublisherActivity : AppCompatActivity() {
 
             // Para navegar entre activities usamos intent
             val intent = Intent(this@PublisherActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        dcBtn.setOnClickListener{
+            val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
+            intent.putExtra("COLOR", "#0078F2") // Pasar el color azul
+            startActivity(intent)
+            finish()
+        }
+        marvelBtn.setOnClickListener{
+            val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
+            intent.putExtra("COLOR", "#ED1D24") // Pasar el color azul
             startActivity(intent)
             finish()
         }

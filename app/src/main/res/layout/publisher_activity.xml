@@ -88,6 +88,7 @@
     </LinearLayout>
 
     <ImageButton
+        android:id="@+id/dc"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/dcbutton"
@@ -98,6 +99,7 @@
         />
 
     <View
+        android:id="@+id/marvel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/marvelbutton"
