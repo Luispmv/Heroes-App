@@ -54,13 +54,11 @@ class PublisherActivity : AppCompatActivity() {
             val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
             intent.putExtra("COLOR", "#0078F2") // Pasar el color azul
             startActivity(intent)
-            finish()
         }
         marvelBtn.setOnClickListener{
             val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
             intent.putExtra("COLOR", "#ED1D24") // Pasar el color azul
             startActivity(intent)
-            finish()
         }
     }
 }
