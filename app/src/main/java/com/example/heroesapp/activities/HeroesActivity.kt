@@ -16,6 +16,7 @@ import com.example.heroesapp.R
 import com.example.heroesapp.adapters.CharacterItemAdapter
 import com.example.heroesapp.models.CharacterItem
 
+
 class HeroesActivity : AppCompatActivity() {
 
     lateinit var backHeroes : ImageView
@@ -26,13 +27,18 @@ class HeroesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_heroes)
-        val colorHex = intent.getStringExtra("COLOR")
 
-        // Verificar que el color no sea nulo y aplicarlo
+        // Recibe el color enviado desde PublisherActivity
+        val colorHex = intent.getStringExtra("COLOR")
         colorHex?.let {
             val color = Color.parseColor(it)
-            window.decorView.setBackgroundColor(color)
+            window.decorView.setBackgroundColor(color) // Aplica el color de fondo
         }
+
+        // Recibe la lista de personajes filtrados
+        val charactersList = intent.getParcelableArrayListExtra<CharacterItem>("CHARACTERS_LIST")
+
+        // Inicializa el botón de retroceso
         backHeroes = findViewById(R.id.back_heroes)
         backHeroes.setOnClickListener{
             val intent = Intent(this@HeroesActivity, PublisherActivity::class.java)
@@ -40,9 +46,13 @@ class HeroesActivity : AppCompatActivity() {
             finish()
         }
 
+        // Configura el RecyclerView con la lista filtrada de personajes
         itemRecyclerView = findViewById(R.id.heroes_list)
-        itemRecyclerView.adapter = CharacterItemAdapter(CharacterItem.characters)
         itemRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
+        // Verifica que la lista de personajes no sea nula
+        charactersList?.let {
+            itemRecyclerView.adapter = CharacterItemAdapter(it)
+        }
     }
 }

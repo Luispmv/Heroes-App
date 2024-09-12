@@ -52,25 +52,21 @@ class PublisherActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-       dcBtn.setOnClickListener {
-            val publisher = Publisher.publishers.find { it.name == "Dc" } // Encontrar DC
-            publisher?.let {
-                val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
-                intent.putExtra("PUBLISHER_ID", it.id) // Pasar el id de DC
-                intent.putExtra("COLOR", "#0078F2") // Pasar el color azul para DC
-                startActivity(intent)
-            }
+        
+        dcBtn.setOnClickListener {
+            val dcCharacters = CharacterItem.characters.filter { it.id in 11..20 } // Filtrar los personajes de DC
+            val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
+            intent.putParcelableArrayListExtra("CHARACTERS_LIST", ArrayList(dcCharacters)) // Pasar los personajes de DC
+            intent.putExtra("COLOR", "#0078F2") // Pasar el color azul para DC
+            startActivity(intent)
         }
 
         marvelBtn.setOnClickListener {
-            val publisher = Publisher.publishers.find { it.name == "Marvel" } // Encontrar Marvel
-            publisher?.let {
-                val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
-                intent.putExtra("PUBLISHER_ID", it.id) // Pasar el id de Marvel
-                intent.putExtra("COLOR", "#ED1D24") // Pasar el color rojo para Marvel
-                startActivity(intent)
-            }
+            val marvelCharacters = CharacterItem.characters.filter { it.id in 1..10 } // Filtrar los personajes de Marvel
+            val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
+            intent.putParcelableArrayListExtra("CHARACTERS_LIST", ArrayList(marvelCharacters)) // Pasar los personajes de Marvel
+            intent.putExtra("COLOR", "#ED1D24") // Pasar el color rojo para Marvel
+            startActivity(intent)
         }
     }
 }
