@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.heroesapp.R
 import com.example.heroesapp.models.CharacterItem
+import com.squareup.picasso.Picasso
 import java.util.Locale.Category
 
 class CharacterItemAdapter(val itemList: List<CharacterItem>): RecyclerView.Adapter<ItemViewHolder>() {
@@ -24,6 +25,7 @@ class CharacterItemAdapter(val itemList: List<CharacterItem>): RecyclerView.Adap
         //Aqui se contiene toda la logica
         val items = itemList[position]
         holder.itemImage
+        Picasso.get().load(items.imagen).into(holder.itemImage)
     }
 
 }
