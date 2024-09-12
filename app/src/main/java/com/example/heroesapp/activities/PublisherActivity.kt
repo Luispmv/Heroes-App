@@ -14,12 +14,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.heroesapp.MainActivity
 import com.example.heroesapp.R
+import com.example.heroesapp.adapters.CharacterItemAdapter
+import com.example.heroesapp.models.CharacterItem
 import com.example.heroesapp.models.Publisher
 import java.util.concurrent.Flow
 
 class PublisherActivity : AppCompatActivity() {
     lateinit var logoutBtn : ImageView
-    lateinit var publisherRecyclerView:  RecyclerView
+    //Referencia a nuestro recyclerView
 
     //Referenciando al boton de dc
     //Referenciando al boton de marvel
@@ -50,17 +52,25 @@ class PublisherActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        dcBtn.setOnClickListener{
-            val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
-            intent.putExtra("COLOR", "#0078F2") // Pasar el color azul
-            startActivity(intent)
-            finish()
+
+       dcBtn.setOnClickListener {
+            val publisher = Publisher.publishers.find { it.name == "Dc" } // Encontrar DC
+            publisher?.let {
+                val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
+                intent.putExtra("PUBLISHER_ID", it.id) // Pasar el id de DC
+                intent.putExtra("COLOR", "#0078F2") // Pasar el color azul para DC
+                startActivity(intent)
+            }
         }
-        marvelBtn.setOnClickListener{
-            val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
-            intent.putExtra("COLOR", "#ED1D24") // Pasar el color azul
-            startActivity(intent)
-            finish()
+
+        marvelBtn.setOnClickListener {
+            val publisher = Publisher.publishers.find { it.name == "Marvel" } // Encontrar Marvel
+            publisher?.let {
+                val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
+                intent.putExtra("PUBLISHER_ID", it.id) // Pasar el id de Marvel
+                intent.putExtra("COLOR", "#ED1D24") // Pasar el color rojo para Marvel
+                startActivity(intent)
+            }
         }
     }
 }

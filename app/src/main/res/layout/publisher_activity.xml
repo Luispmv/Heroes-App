@@ -71,7 +71,8 @@
             android:layout_marginLeft="10dp"
             android:text="usuario"
             android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/white" />
 
         <Space
             android:layout_width="0dp"
@@ -96,6 +97,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideV2"
+        android:contentDescription="dcbutton"
         />
 
     <View
