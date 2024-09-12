@@ -9,12 +9,18 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.heroesapp.MainActivity
 import com.example.heroesapp.R
+import com.example.heroesapp.adapters.CharacterItemAdapter
+import com.example.heroesapp.models.CharacterItem
 
 class HeroesActivity : AppCompatActivity() {
 
     lateinit var backHeroes : ImageView
+    lateinit var itemRecyclerView: RecyclerView
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +39,10 @@ class HeroesActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        itemRecyclerView = findViewById(R.id.heroes_list)
+        itemRecyclerView.adapter = CharacterItemAdapter(CharacterItem.characters)
+        itemRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
     }
 }
