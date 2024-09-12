@@ -52,7 +52,7 @@ class PublisherActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        
+
         dcBtn.setOnClickListener {
             val dcCharacters = CharacterItem.characters.filter { it.id in 11..20 } // Filtrar los personajes de DC
             val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
