@@ -1,5 +1,6 @@
 package com.example.heroesapp.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,9 @@ class CharacterItemAdapter(val itemList: List<CharacterItem>): RecyclerView.Adap
         val items = itemList[position]
         holder.itemImage
         Picasso.get().load(items.imagen).into(holder.itemImage)
+        holder.itemView.setOnClickListener{
+            Log.d("CharacterItemAdapter", "Item clicked: ${items.name}")
+        }
     }
 
 }
