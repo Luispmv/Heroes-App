@@ -1,5 +1,6 @@
 package com.example.heroesapp.adapters
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.heroesapp.R
+import com.example.heroesapp.activities.HeroDetailActivity
+import com.example.heroesapp.activities.HeroesActivity
 import com.example.heroesapp.models.CharacterItem
 import com.squareup.picasso.Picasso
 import java.util.Locale.Category
@@ -30,6 +33,10 @@ class CharacterItemAdapter(val itemList: List<CharacterItem>): RecyclerView.Adap
         //rama de test
         holder.itemView.setOnClickListener{
             Log.d("CharacterItemAdapter", "Item clicked: ${items.name}")
+            val context = holder.itemView.context
+            val intent = Intent(context, HeroDetailActivity::class.java)
+//            val intent = Intent(context, HeroDetailActivity::class.java)
+            context.startActivity(intent)
         }
     }
 
