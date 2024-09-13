@@ -36,6 +36,8 @@ class CharacterItemAdapter(val itemList: List<CharacterItem>): RecyclerView.Adap
             Log.d("CharacterItemAdapter", "Item clicked: ${items.name}")
             val context = holder.itemView.context
             val intent = Intent(context, HeroDetailActivity::class.java)
+            intent.putExtra("heroName", items.name)
+            intent.putExtra("heroImage", items.imagen)
 //            val intent = Intent(context, HeroDetailActivity::class.java)
             context.startActivity(intent)
         }
