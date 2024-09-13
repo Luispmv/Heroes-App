@@ -27,6 +27,7 @@ class CharacterItemAdapter(val itemList: List<CharacterItem>): RecyclerView.Adap
         val items = itemList[position]
         holder.itemImage
         Picasso.get().load(items.imagen).into(holder.itemImage)
+        //rama de test
         holder.itemView.setOnClickListener{
             Log.d("CharacterItemAdapter", "Item clicked: ${items.name}")
         }
