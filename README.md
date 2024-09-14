@@ -1,3 +1,3 @@
 # Heroes-App
 
-![App Screenshot](https://imgur.com/gallery/hero-app-movile-views-W80hkmh)
+![App Screenshot](https://i.imgur.com/m1N4yVA.jpeg)
