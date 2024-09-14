@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.HeroDetailActivity"
-    android:background="@color/strongred">
+    android:background="@color/strongred"
+    android:id="@+id/detailactivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"

@@ -58,6 +58,8 @@ class PublisherActivity : AppCompatActivity() {
             val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
             intent.putParcelableArrayListExtra("CHARACTERS_LIST", ArrayList(dcCharacters)) // Pasar los personajes de DC
             intent.putExtra("COLOR", "#0078F2") // Pasar el color azul para DC
+            intent.putExtra("IMAGE_RES", R.drawable.dc) // Pasar el recurso drawable para DC
+
             startActivity(intent)
         }
 
@@ -66,6 +68,8 @@ class PublisherActivity : AppCompatActivity() {
             val intent = Intent(this@PublisherActivity, HeroesActivity::class.java)
             intent.putParcelableArrayListExtra("CHARACTERS_LIST", ArrayList(marvelCharacters)) // Pasar los personajes de Marvel
             intent.putExtra("COLOR", "#ED1D24") // Pasar el color rojo para Marvel
+            intent.putExtra("IMAGE_RES", R.drawable.mv) // Pasar el recurso drawable para Marvel
+
             startActivity(intent)
         }
     }

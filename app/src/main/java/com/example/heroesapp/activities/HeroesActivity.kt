@@ -21,6 +21,8 @@ class HeroesActivity : AppCompatActivity() {
 
     lateinit var backHeroes : ImageView
     lateinit var itemRecyclerView: RecyclerView
+    lateinit var publisherLogo: ImageView
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,13 @@ class HeroesActivity : AppCompatActivity() {
         colorHex?.let {
             val color = Color.parseColor(it)
             window.decorView.setBackgroundColor(color) // Aplica el color de fondo
+        }
+
+        // Recibimos la imagen
+        val imageRes = intent.getIntExtra("IMAGE_RES", -1)
+        publisherLogo = findViewById(R.id.publisherlogo)
+        if (imageRes != -1) {
+            publisherLogo.setImageResource(imageRes) // Cambia la imagen
         }
 
         // Recibe la lista de personajes filtrados

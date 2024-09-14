@@ -38,6 +38,10 @@ class CharacterItemAdapter(val itemList: List<CharacterItem>): RecyclerView.Adap
             val intent = Intent(context, HeroDetailActivity::class.java)
             intent.putExtra("heroName", items.name)
             intent.putExtra("heroImage", items.imagen)
+            intent.putExtra("description", items.descripcion)
+
+            //Agregando id
+            intent.putExtra("heroId", items.id)
 //            val intent = Intent(context, HeroDetailActivity::class.java)
             context.startActivity(intent)
         }

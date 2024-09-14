@@ -27,17 +27,31 @@
             app:layout_constraintTop_toTopOf="parent">
         </ImageView>
 
-        <!--    // Recycler view Aqui abajo-->
+        <ImageView
+            android:id="@+id/publisherlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:src="@drawable/mv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toStartOf="@+id/back_heroes"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintVertical_bias="0.024">
+
+        </ImageView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/heroes_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="70dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/back_heroes"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="9dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
